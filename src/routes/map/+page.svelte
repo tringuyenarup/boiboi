@@ -31,6 +31,7 @@
 		for (let i = 0; i < arrayData.length; i++) {
 			results[i] = arrayData[i].LONGNAME;
 		}
+		results.splice(0, 0, "All lines");
 		transit_lines = results;
 	});
 

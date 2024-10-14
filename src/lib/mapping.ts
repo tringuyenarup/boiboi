@@ -38,11 +38,12 @@ function createQueryStmt(selectedDatabase: string,
     switch (key) {
         case "volume_difference": { return substitute(template, { "%from%": selectedTimeFrom, "%to%": selectedTimeTo }); };
         case "volume_capacity": {
-            if (selectedTransitLine != "") {
-                return substitute(template, { "%period%": selectedTimeFrom }) + ` AND LONGNAME == '${selectedTransitLine}';`;
+            if ((selectedTransitLine === "") || (selectedTransitLine === "All lines")) {
+                return substitute(template, { "%period%": selectedTimeFrom });
             }
             else {
-                return substitute(template, { "%period%": selectedTimeFrom });
+                return substitute(template, { "%period%": selectedTimeFrom }) + ` AND LONGNAME == '${selectedTransitLine}';`;
+
             }
         };
         default: throw Error(`Unknown key ${key}`);
