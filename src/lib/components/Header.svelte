@@ -5,7 +5,7 @@
 
 <header
     class="header"
-    in:slide={{ duration: 3000 }}
+    in:fade={{ duration: 3000 }}
     out:fade={{ duration: 300 }}
 >
     <h1 class="animated-title">{title}</h1>
@@ -13,7 +13,7 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/map">Maps</a></li>
-            <li><a href="/others">Others</a></li>
+            <li><a href="/others">Sanky</a></li>
         </ul>
     </nav>
 </header>
