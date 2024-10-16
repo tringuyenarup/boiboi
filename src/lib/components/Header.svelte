@@ -1,6 +1,6 @@
 <script>
     import { fade, slide } from "svelte/transition";
-    export let title = "Dynamic Map Explorer";
+    export let title = "Vxplorer";
 </script>
 
 <header

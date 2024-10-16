@@ -66,6 +66,7 @@
             .attr("height", (d: any) => d.y1 - d.y0)
             .attr("width", (d: any) => d.x1 - d.x0)
             .style("fill", (d: any) => color(d.name))
+            // .style("opacity", 0.2)
             .append("title")
             .text((d: any) => `${d.name}\n${d.value.toLocaleString()}`);
 
@@ -79,15 +80,15 @@
             .attr("d", d3Sankey.sankeyLinkHorizontal())
             .attr("stroke", (d: any) => color(d.names[0]))
             .attr("stroke-width", (d: any) => d.width)
-            .style("opacity", 0.55)
-            .on("mouseover", function (_event, d: any) {
-                tooltip
-                    .style("visibility", "visible")
-                    .text(
-                        `${d.names[0]} to ${d.names[1]}: ${parseInt(d.value).toLocaleString()} trips.`,
-                    );
-                d3.select(this).transition().style("opacity", 1.0);
-            })
+            .style("opacity", 0.2)
+            // .on("mouseover", function (_event, d: any) {
+            //     tooltip
+            //         .style("visibility", "visible")
+            //         .text(
+            //             `${d.names[0]} to ${d.names[1]}: ${parseInt(d.value).toLocaleString()} trips.`,
+            //         );
+            //     d3.select(this).transition().style("opacity", 1.0);
+            // })
             .on("mousemove", function (event) {
                 tooltip
                     .style("top", `${event.pageY - 10}px`)
@@ -96,7 +97,15 @@
             })
             .on("mouseout", function () {
                 tooltip.style("visibility", "hidden");
-                d3.select(this).transition().style("opacity", 0.55);
+                d3.select(this).transition().style("opacity", 0.2);
+            })
+            .on("click", function (event, d: any) {
+                tooltip
+                    .style("visibility", "visible")
+                    .text(
+                        `${d.names[0]} to ${d.names[1]}: ${parseInt(d.value).toLocaleString()} trips.`,
+                    );
+                d3.select(this).transition().style("opacity", 1.0);
             })
             .style("mix-blend-mode", "multiply");
 
