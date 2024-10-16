@@ -19,10 +19,11 @@
         const svg = d3
             .select("#sankey-container")
             .append("svg")
-            .attr("width", "100vw")
-            .attr("height", height)
-            .style("width", "100%")
-            .style("height", "auto");
+            .attr("width", "auto")
+            .attr("height", "auto");
+
+        // .style("width", "2800px")
+        // .style("height", "1000px");
 
         // Configure Sankey layout
         const sankey = d3Sankey
@@ -55,7 +56,7 @@
             .style("font-family", "'Open Sans', sans-serif")
             .style("font-size", "14px");
 
-        const color = d3.scaleOrdinal(d3.schemeAccent);
+        const color = d3.scaleOrdinal(d3.schemeCategory10);
         svg.append("g")
             .selectAll("rect")
             .data(sankeyNodes)
@@ -128,8 +129,9 @@
         justify-content: center;
         align-items: right;
         height: 100vh;
-        width: 100%;
+        width: 93.5%;
+        resize: both;
         margin-left: 1rem;
-        background-color: #f8f9fa; /* Optional background color */
+        background-color: #ffffff; /* Optional background color */
     }
 </style>
