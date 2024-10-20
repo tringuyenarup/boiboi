@@ -9,6 +9,7 @@
 
 	onMount(async () => {
 		let input = await d3.csv("output.csv");
+
 		trafficSankey = getTrafficSankey(input);
 	});
 </script>

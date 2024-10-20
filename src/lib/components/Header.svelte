@@ -13,7 +13,7 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/map">Maps</a></li>
-            <li><a href="/others">Sanky</a></li>
+            <li><a href="/sanky">Sanky</a></li>
         </ul>
     </nav>
 </header>

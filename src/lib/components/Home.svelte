@@ -3,8 +3,6 @@
     import { scaleLinear } from "d3-scale";
     // @ts-ignore
     import { select } from "d3-selection";
-    import * as db from "$lib/db";
-    import Header from "$lib/components/Header.svelte";
 
     let randomData = [];
     let svg: SVGElement;
